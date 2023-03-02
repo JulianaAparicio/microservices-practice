@@ -20,19 +20,19 @@ public class Customer {
     private Long id;
 
     @NotNull
-    @Column
+    @Column(name = "type_id")
     private String IdType;
 
     @NotNull
-    @Column
+    @Column(name = "number_id")
     private String idNumber;
 
     @NotNull
-    @Column
+    @Column(name = "first_name")
     private String firstName;
 
     @NotNull
-    @Column
+    @Column(name = "last_name")
     private String lastName;
 
     @NotNull
@@ -40,6 +40,6 @@ public class Customer {
     private String genre;
 
     @NotNull
-    @Column
+    @Column(name = "birth_date")
     private LocalDate birthDate;
 }
