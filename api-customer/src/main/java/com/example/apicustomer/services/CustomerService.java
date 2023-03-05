@@ -1,5 +1,6 @@
 package com.example.apicustomer.services;
 
+import com.example.apicustomer.dtos.CustomerDTO;
 import com.example.apicustomer.exceptions.NotFoundException;
 import com.example.apicustomer.entities.Customer;
 import com.example.apicustomer.repositories.ICustomerRepository;
@@ -21,16 +22,15 @@ public class CustomerService {
                 "customer with the id type and number: " + idType + ", " + idNumber + " was not found."));
     }
 
-    public Customer update(Customer customer) throws NotFoundException {
-        Customer existingCustomer = customerRepository.findById(customer.getId())
+    public void update(CustomerDTO customerDTO) throws NotFoundException {
+        Customer existingCustomer = customerRepository.findById(customerDTO.getId())
                 .orElseThrow(() -> new NotFoundException("The customer was not found."));
-        existingCustomer.setFirstName(customer.getFirstName());
-        existingCustomer.setBirthDate(customer.getBirthDate());
-        existingCustomer.setLastName(customer.getLastName());
-        existingCustomer.setGenre(customer.getGenre());
+        existingCustomer.setFirstName(customerDTO.getFirstName());
+        existingCustomer.setBirthDate(customerDTO.getBirthDate());
+        existingCustomer.setLastName(customerDTO.getLastName());
+        existingCustomer.setGenre(customerDTO.getGenre());
 
         customerRepository.save(existingCustomer);
-        return existingCustomer;
     }
 
     public void deleteById(Long id) throws NotFoundException {

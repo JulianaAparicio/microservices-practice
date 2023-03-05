@@ -1,5 +1,6 @@
 package com.example.apicustomer.controllers;
 
+import com.example.apicustomer.dtos.CustomerDTO;
 import com.example.apicustomer.exceptions.NotFoundException;
 import com.example.apicustomer.entities.Customer;
 import com.example.apicustomer.services.CustomerService;
@@ -26,8 +27,8 @@ public class CustomerController {
     }
 
     @PutMapping
-    public ResponseEntity<?> modify(@RequestBody Customer customer) throws NotFoundException {
-        customerService.update(customer);
+    public ResponseEntity<?> modify(@RequestBody CustomerDTO customerDTO) throws NotFoundException {
+        customerService.update(customerDTO);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
