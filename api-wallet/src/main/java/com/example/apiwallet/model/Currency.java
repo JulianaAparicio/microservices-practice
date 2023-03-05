@@ -1,4 +1,4 @@
-package com.example.apiwallet.models;
+package com.example.apiwallet.model;
 
 import com.sun.istack.NotNull;
 import lombok.Getter;

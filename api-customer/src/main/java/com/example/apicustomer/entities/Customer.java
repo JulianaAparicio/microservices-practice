@@ -1,4 +1,4 @@
-package com.example.apicustomer.models;
+package com.example.apicustomer.entities;
 
 import com.sun.istack.NotNull;
 import lombok.Getter;
