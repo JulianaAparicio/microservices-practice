@@ -1,4 +1,4 @@
-package com.example.apiwallet.model;
+package com.example.apiwallet.entities;
 
 import com.sun.istack.NotNull;
 import lombok.Getter;
@@ -20,7 +20,7 @@ public class Currency {
 
     @NotNull
     @Column(name = "currency_code")
-    private Integer currencyCode;
+    private String currencyCode;
 
     @NotNull
     @Column
