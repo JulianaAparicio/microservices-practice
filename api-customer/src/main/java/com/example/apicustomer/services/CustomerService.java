@@ -16,9 +16,9 @@ public class CustomerService {
         return customerRepository.save(customer);
     }
 
-    public Customer findById(Long id) throws NotFoundException {
-        return customerRepository.findById(id).orElseThrow(() -> new NotFoundException("The " +
-                "category with the id: " + id + " was not found."));
+    public Customer findByIdNumberAndType(String idNumber, String idType) throws NotFoundException {
+        return customerRepository.findByIdNumberAndType(idNumber, idType).orElseThrow(() -> new NotFoundException("The " +
+                "customer with the id type and number: " + idType + ", " + idNumber + " was not found."));
     }
 
     public Customer update(Customer customer) throws NotFoundException {

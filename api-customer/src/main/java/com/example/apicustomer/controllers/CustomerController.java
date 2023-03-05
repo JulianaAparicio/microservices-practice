@@ -21,8 +21,8 @@ public class CustomerController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<?> search(@PathVariable Long id) throws NotFoundException {
-        return new ResponseEntity<>(customerService.findById(id), HttpStatus.FOUND);
+    public ResponseEntity<?> search(@PathVariable String idNumber, String idType) throws NotFoundException {
+        return new ResponseEntity<>(customerService.findByIdNumberAndType(idNumber, idType), HttpStatus.FOUND);
     }
 
     @PutMapping
